@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "소위 어간형 부사 '니르'에 관하여"
 date:   2026-05-15 15:45:00 +0900
 categories: linguistics

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "중세 한국어 음절말 'ㅈ, ㅊ > ㅅ' 중화에 관하여"
 date:   2026-06-08 21:30:00 +0900
 categories: linguistics

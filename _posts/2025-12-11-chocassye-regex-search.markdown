@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "iBPE: 초고속 정규표현식 말뭉치 검색 알고리즘"
 date:   2025-12-11 19:27:00 +0900
 categories: computer-science

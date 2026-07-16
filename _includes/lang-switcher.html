@@ -1,0 +1,42 @@
+{%- comment -%}
+  In-post language switcher for the plugin-free multilingual setup.
+
+  Posts that are translations of one another share the same `ref:` front
+  matter value (e.g. `ref: middle-korean-coda-s`) and differ in `lang:`
+  (`ko`, `en`, ...). This lists every language a post exists in, linking to
+  the sibling translations and marking the current one.
+
+  Renders nothing when a post has no `ref` or no sibling translations, so it
+  is safe to include on every post.
+
+  To add a language, extend the `case` block below with its native name.
+{%- endcomment -%}
+
+{%- if page.ref -%}
+  {%- assign siblings = site.posts | where: 'ref', page.ref | sort: 'lang' -%}
+  {%- if siblings.size > 1 -%}
+    {%- assign current = page.lang | default: site.lang_default -%}
+    {%- if current == 'ko' -%}
+      {%- assign intro = '다음 언어로 읽기: ' -%}
+    {%- else -%}
+      {%- assign intro = 'Also available in: ' -%}
+    {%- endif -%}
+    <p class="lang-switcher text-muted mb-4">
+      <i class="fa-solid fa-language fa-fw"></i>
+      {{ intro }}
+      {%- for post in siblings -%}
+        {%- case post.lang -%}
+          {%- when 'ko' -%}{%- assign name = '한국어' -%}
+          {%- when 'en' -%}{%- assign name = 'English' -%}
+          {%- else -%}{%- assign name = post.lang -%}
+        {%- endcase -%}
+        {% if post.lang == current %}
+          <strong>{{ name }}</strong>
+        {%- else -%}
+          <a href="{{ post.url | relative_url }}">{{ name }}</a>
+        {%- endif -%}
+        {%- unless forloop.last %} · {% endunless -%}
+      {%- endfor -%}
+    </p>
+  {%- endif -%}
+{%- endif -%}
