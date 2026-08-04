@@ -82,3 +82,6 @@ a.img-link {
   transform: unset !important;
 }
 
+.shimmer::before {
+  position: static;
+}
