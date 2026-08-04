@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "'마ᄃᆡ'와 '마노라'의 어원 생각"
 date:   2025-09-19 20:56:00 +0900
 categories: linguistics

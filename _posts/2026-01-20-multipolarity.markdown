@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "미국이 그린란드를 노리는 진짜 이유"
 date:   2026-01-20 14:26:00 +0900
 categories: politics

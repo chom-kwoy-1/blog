@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: translated-post
 title:  "고양이는 왜 털이 무한정 자라지 않을까?"
 date:   2024-05-08 21:30:00 +0900
 categories: math

@@ -4,6 +4,16 @@ theme: jekyll-theme-chirpy
 # (_data/locales/ko-KR.yml).
 lang: ko-KR
 
+# ----------------------------------------------------------------------------
+# Multilingual (plugin-free) — see _includes/lang-switcher.html
+# ----------------------------------------------------------------------------
+# Short code (matching each post's `lang:` front matter) for the site's
+# primary language. Listings, archives, categories, search and the RSS feed
+# show ONLY posts in this language; posts in other languages are reached via
+# the in-post language switcher. Posts default to this language (see the
+# `defaults` block below), so only translations need an explicit `lang:`.
+lang_default: ko
+
 timezone: Asia/Seoul
 
 # ----------------------------------------------------------------------------
@@ -72,7 +82,11 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: post
+      # `translated-post` wraps the theme's `post` layout to add the language
+      # switcher; see _layouts/translated-post.html.
+      layout: translated-post
+      # Default language for posts. Translations override this with `lang: en`.
+      lang: ko
       comments: true
       toc: true
       math: true

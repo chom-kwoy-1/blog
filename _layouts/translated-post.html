@@ -1,0 +1,12 @@
+---
+layout: post
+---
+{% comment %}
+  Thin wrapper around the theme's `post` layout that prepends the in-post
+  language switcher to the article body. Using a wrapper (rather than a full
+  copy of the theme's post.html) keeps us decoupled from the theme so it can
+  be upgraded freely. Posts use this layout via the `defaults` block in
+  _config.yml. See _includes/lang-switcher.html.
+{% endcomment %}
+{% include lang-switcher.html %}
+{{ content }}
