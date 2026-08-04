@@ -7,6 +7,13 @@ layout: post
   copy of the theme's post.html) keeps us decoupled from the theme so it can
   be upgraded freely. Posts use this layout via the `defaults` block in
   _config.yml. See _includes/lang-switcher.html.
+
+  The theme's default.html only runs refactor-content.html (code-block
+  headers, image lazy-loading, heading anchors, ...) when the page's direct
+  layout is a child of `default`. Jekyll keeps the innermost layout's
+  `layout` key when merging, so with this wrapper `layout.layout` is "post"
+  and the theme skips refactoring — we apply it to the content here instead.
 {% endcomment %}
 {% include lang-switcher.html %}
-{{ content }}
+{% include lang.html %}
+{% include refactor-content.html content=content lang=lang %}
